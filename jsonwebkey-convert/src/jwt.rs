@@ -7,6 +7,6 @@ pub trait ToDecodingKey {
 
 impl ToDecodingKey for RSAPublicKey {
     fn to_decoding_key(&'_ self) -> DecodingKey {
-        DecodingKey::from_rsa_components(&self.n.base64, &self.e.base64)
+        DecodingKey::from_rsa_components(&self.n.base64, &self.e.base64).unwrap()
     }
 }
